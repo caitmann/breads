@@ -7,6 +7,7 @@ const app = express()
 app.set('views', __dirname + '/views')
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
+app.use(express.urlencoded({extended: true}))
 
 app.get('/', (req, res) => {
     res.send('Welcome to an awesome app about breads!')
